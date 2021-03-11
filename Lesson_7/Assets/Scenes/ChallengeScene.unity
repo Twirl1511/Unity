@@ -938,7 +938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbbda87400bdb9b41b47a6db4e064f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WheatCounter: 40
+  WheatCounter: 25
   WheatPerCircleProduce: 0
   SecondsToCollectWheat: 10
   WheatClock: {fileID: 740081472}
@@ -957,8 +957,8 @@ MonoBehaviour:
   WarriorsText: {fileID: 1923259187}
   PeasantCounter: 0
   PeasantValue: 3
-  SecondsToProducePeasant: 5
-  HowManyFoodProduce: 5
+  SecondsToProducePeasant: 10
+  HowManyFoodProduce: 4
   BuyPeasantButton: {fileID: 754334224}
   PeasantClock: {fileID: 754334223}
   PeasantsText: {fileID: 2125413176}
