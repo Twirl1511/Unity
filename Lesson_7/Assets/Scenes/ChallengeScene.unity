@@ -965,6 +965,7 @@ MonoBehaviour:
   BarbarianCounter: 2
   NewRaid: 1
   SecondsTillRaid: 30
+  PlusSecondsToNewRaid: 10
   TimeToFight: 0.7
   BarbarianRaid: {fileID: 1988204046}
   BarbariansText: {fileID: 1280715715}

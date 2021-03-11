@@ -42,6 +42,7 @@ public class GameControllerScript : MonoBehaviour
     [SerializeField] private int BarbarianCounter;
     [SerializeField] private int NewRaid;
     [SerializeField] public float SecondsTillRaid;
+    [SerializeField] public float PlusSecondsToNewRaid;
     [SerializeField] public float TimeToFight;
     [SerializeField] private BarbarianRaid BarbarianRaid;
     [SerializeField] private Text BarbariansText;
@@ -126,6 +127,7 @@ public class GameControllerScript : MonoBehaviour
             WarriorCounter -= BarbarianCounter;
             MealToFeedVillage = WarriorCounter * HowManyFoodEat;
             BarbarianCounter += NewRaid;
+            SecondsTillRaid += PlusSecondsToNewRaid;
         }
     }
 
