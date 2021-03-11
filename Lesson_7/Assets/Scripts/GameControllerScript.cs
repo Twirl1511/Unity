@@ -52,7 +52,7 @@ public class GameControllerScript : MonoBehaviour
     {
         WheatClock.MaxTime = SecondsToCollectWheat;
         WheatClock.StartLoop();
-        BarbarianCounter = NewRaid;
+        BarbarianCounter = NewRaid + BarbarianCounter;
     }
 
     void Update()
