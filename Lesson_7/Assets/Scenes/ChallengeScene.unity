@@ -938,33 +938,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbbda87400bdb9b41b47a6db4e064f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WheatCounter: 30
-  WheatPerCircleProduce: 10
+  WheatCounter: 40
+  WheatPerCircleProduce: 0
   SecondsToCollectWheat: 10
   WheatClock: {fileID: 740081472}
   WheatText: {fileID: 491032022}
   WheatToWin: 500
   MealToFeedVillage: 0
-  SecondsTillFeed: 5
+  SecondsTillFeed: 10
   MealClock: {fileID: 722058541}
   MealText: {fileID: 34375488}
   WarriorCounter: 0
-  WarriorValue: 10
+  WarriorValue: 15
   SecondsToProduceWarrior: 10
   HowManyFoodEat: 5
   BuyWarriorButton: {fileID: 382892227}
   WarriorClock: {fileID: 382892224}
   WarriorsText: {fileID: 1923259187}
-  PeasantCounter: 3
+  PeasantCounter: 0
   PeasantValue: 3
   SecondsToProducePeasant: 5
-  HowManyFoodProduce: 3
+  HowManyFoodProduce: 5
   BuyPeasantButton: {fileID: 754334224}
   PeasantClock: {fileID: 754334223}
   PeasantsText: {fileID: 2125413176}
-  BarbarianCounter: 0
-  NewRaid: 2
-  SecondsTillRaid: 50
+  BarbarianCounter: 2
+  NewRaid: 1
+  SecondsTillRaid: 30
   TimeToFight: 0.7
   BarbarianRaid: {fileID: 1988204046}
   BarbariansText: {fileID: 1280715715}
