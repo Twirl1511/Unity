@@ -962,7 +962,7 @@ MonoBehaviour:
   BuyPeasantButton: {fileID: 754334224}
   PeasantClock: {fileID: 754334223}
   PeasantsText: {fileID: 2125413176}
-  BarbarianCounter: 2
+  BarbarianCounter: 0
   NewRaid: 1
   SecondsTillRaid: 30
   PlusSecondsToNewRaid: 10
