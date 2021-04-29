@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ClockFillScript : MonoBehaviour
 {
-    [HideInInspector] public float MaxTime;
+    public float MaxTime;
     public Image img;
     private float _curentTime;
     [SerializeField] private bool play;
@@ -28,8 +28,7 @@ public class ClockFillScript : MonoBehaviour
         {
             PlayCircle();
             loop = false;
-        }
-        if (loop)
+        }else if (loop)
         {
             PlayCircle();
         }
@@ -54,6 +53,12 @@ public class ClockFillScript : MonoBehaviour
     public void StartLoop()
     {
         loop = true;
+    }
+    public void StopLoop()
+    {
+        loop = false;
+        _curentTime = 0;
+        img.fillAmount = 0;
     }
     /// <summary>
     /// единожды выполнить

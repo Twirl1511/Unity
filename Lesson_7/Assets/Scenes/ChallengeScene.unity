@@ -1035,7 +1035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3572f5a076f02ad48a003231f52401c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 3
+  MaxTime: 10
   img: {fileID: 722058542}
   play: 0
   loop: 0
@@ -1619,7 +1619,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 30
 --- !u!222 &1092542965
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1964,13 +1964,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1092542963}
-  m_Father: {fileID: 2114408809}
-  m_RootOrder: 6
+  m_Father: {fileID: 1988204043}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -80, y: 87}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -28.850021, y: 78.97}
+  m_SizeDelta: {x: 84.26941, y: 46.064056}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1283425203
 MonoBehaviour:
@@ -2034,7 +2034,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: de620113fc5daf14faf9552692b84ec7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e1172d0161030574dae11c5e2cb8921a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2689,6 +2689,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1178083399}
+  - {fileID: 1283425202}
   m_Father: {fileID: 2114408809}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2884,7 +2885,6 @@ RectTransform:
   - {fileID: 987736092}
   - {fileID: 1988204043}
   - {fileID: 1927272606}
-  - {fileID: 1283425202}
   m_Father: {fileID: 1645419214}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

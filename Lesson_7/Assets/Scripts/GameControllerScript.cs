@@ -5,13 +5,15 @@ using UnityEngine.UI;
 
 public class GameControllerScript : MonoBehaviour
 {
+    public static GameControllerScript singleton;
     [Header("Weat")]
-    [SerializeField] private int WheatCounter;
+    public int WheatCounter;
+    public int WheatToWin;
     [SerializeField] private int WheatPerCircleProduce;
     [SerializeField] private float SecondsToCollectWheat;
     [SerializeField] private ClockFillScript WheatClock;
     [SerializeField] private Text WheatText;
-    [SerializeField] private int WheatToWin;
+    
 
     [Header("Meal")]
     [SerializeField] private int MealToFeedVillage;
@@ -46,8 +48,26 @@ public class GameControllerScript : MonoBehaviour
     [SerializeField] public float TimeToFight;
     [SerializeField] private BarbarianRaid BarbarianRaid;
     [SerializeField] private Text BarbariansText;
+    
+    public enum GameEnds
+    {
+        Game,
+        Victory,
+        Loose
+    }
+    public GameEnds GameEnd;
 
-
+    private void Awake()
+    {
+        if(singleton == null)
+        {
+            singleton = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
     void Start()
     {
         WheatClock.MaxTime = SecondsToCollectWheat;
@@ -57,6 +77,8 @@ public class GameControllerScript : MonoBehaviour
 
     void Update()
     {
+        CheckForWin();
+
         TextUpdate();
 
         MeatAndFoodCheck();
@@ -65,14 +87,29 @@ public class GameControllerScript : MonoBehaviour
 
         HungerCheck();
 
-        CheckForWin();
 
-        if (WarriorCounter > 0)
+        if (WarriorCounter >= 1)
         {
             MealToFeedVillage = WarriorCounter * HowManyFoodEat;
-            MealClock.PlayCircle();
+            MealClock.StartLoop();
+        }
+        else
+        {
+            MealClock.StopLoop();
         }
     }
+
+    public void CheckForWin()
+    {
+        if (WheatCounter >= WheatToWin)
+        {
+            GameEnd = GameEnds.Victory;
+        }
+    }
+    
+
+
+
     public void TextUpdate()
     {
         WarriorsText.text = WarriorCounter.ToString();
@@ -97,10 +134,12 @@ public class GameControllerScript : MonoBehaviour
     }
     public void MeatAndFoodCheck()
     {
+        // производим зерно
         if (WheatClock.State == ClockFillScript.States.Finished)
         {
             WheatProduse();
         }
+        // кормим солдат
         if (MealClock.State == ClockFillScript.States.Finished)
         {
             WheatToFeed();
@@ -119,8 +158,7 @@ public class GameControllerScript : MonoBehaviour
 
         if(BarbarianCounter > WarriorCounter)
         {
-            Debug.Log("Game Over");
-            Time.timeScale = 0;
+            GameEnd = GameEnds.Loose;
         }
         else
         {
@@ -132,14 +170,7 @@ public class GameControllerScript : MonoBehaviour
     }
 
     
-    public void CheckForWin()
-    {
-        if(WheatCounter >= WheatToWin)
-        {
-            Debug.Log("You Win!");
-            Time.timeScale = 0;
-        }
-    }
+    
 
     public void BuyWarrior()
     {
@@ -191,7 +222,6 @@ public class GameControllerScript : MonoBehaviour
     }
     public void WheatToFeed()
     {
-        MealClock.MaxTime = SecondsTillFeed;
         WheatCounter -= MealToFeedVillage;
     }
 
